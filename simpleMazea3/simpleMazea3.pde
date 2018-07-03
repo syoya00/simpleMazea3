@@ -1,7 +1,9 @@
 //2018.07.02 解析すたーと
 int phase;
 
-int mazeaSize = 5;
+int mazeaSize = 10;
+//壁の大きさ
+//width/mazeaSize,height/mazeaSize が奇数になるよう設定する
 Mazea mazea;
 Player player;
 int count;
@@ -12,7 +14,7 @@ boolean errorMap;
 
 void setup() {
   //(おそらく)processingの更新でsize内で変数が使えなくなったので適宜変更
-  size(1205, 805);
+  size(1210, 810);
   phase = 1;
   mazea = new Mazea(mazeaSize, width/mazeaSize, height/mazeaSize);
   player = new Player();
@@ -27,6 +29,9 @@ void setup() {
 }
 
 void draw() {
+  //.display = 描画処理
+  //.move = 位置変更処理（今回はプレイヤーの動き入力のみ）
+
   background(0);
   mazea.display();
   searcher.display();

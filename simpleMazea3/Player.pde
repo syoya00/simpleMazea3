@@ -16,6 +16,7 @@ class Player {
     ellipse(posX*mazeaSize+mazeaSize/2, posY*mazeaSize+mazeaSize/2, playerSize, playerSize);
   }
   void move() {
+    //wasdで方向（moveMode）を指定、その方向に進み続ける
     if (moveMode==0) {
       if (posY>0&&mazea.mazeaData[posX][posY-1]==0) {
         posY--;
@@ -40,4 +41,3 @@ class Player {
     moveMode = 0;
   }
 }
-
